@@ -20,4 +20,6 @@ COMPILATION: You will need a standard C++ compiler such as GNU g++
 Using GSU:
 
 ./gsu --gtu --bfile segment --setc gene_set.txt --cov cov.PC.txt --phs multi_phenotype.txt --phs-wt weight.txt --LK --pjG --out assoc.multi.wt.rst
+
+
 ./gsu --gtu --bfile segment --setc gene_set.txt cov.PC.txt --phs uni_phenotype.txt --LK --pjG --out assoc.uni.wt.rst
