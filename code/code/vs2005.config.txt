@@ -1,0 +1,29 @@
+ For Visual Studio
+ 
+Make sure you compile with optimization enabled. This can easily gain you a factor of ten or more.
+
+
+Define the NDEBUG macro when compiling; this disables some run-time checks which speeds up your program.
+
+Enable vectorization, as described in How can I enable vectorization?.
+
+If your matrices are very small (size between 2 and 4), then using fixed-size matrices instead of dynamic-size matrices can get you a substantial speed-up.
+
+Sometimes, quite a lot of time can be spent by the creation of temporary objects to hold intermediate results. See the next question to track this down.
+
+Matrix multiplications are costly. See Writing Efficient Matrix Product Expressions for some advice.
+
+General programming advice also applies here. In particular, profile your code, find the bottleneck, and optimize that part. 
+
+Configuring your project for optimal performance
+
+    Open the project properties page (Project | Properties), in the C/C++ folder open the Code Generation page. Under Enable Enhanced Instruction Set, switch to Streaming SIMD Extensions 2 (/arch:SSE2)
+    Open the project properties page (Project | Properties), in the C/C++ folder open the Language page. Under Open MP Support, switch to Yes (/openmp).
+    In case you are on a 64 bit machine, open the configuration manager (Project | Properties | Configuration Manager...). From here, select <New...> under Active solution platform:. Next, choose x64 and confirm the dialog with OK. Once you are back in the main window, switch from Win32 to x64 in order to create 64 bit builds of your program. 
+
+Since boost::thread is used here, we might not use openMP for Eigen
+
+need to build boost lib
+1.run bootstrap.bat
+2. run b2
+3. go to properties->linker->general->additional library, add "$Root$\boost\boost_1_55_0\stage\lib"

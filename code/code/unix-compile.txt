@@ -1,0 +1,3 @@
+g++ -I eigen -I boost_1_53_0 -msse2 *.cpp -w -O3 -o gtu
+
+g++ -static -L boost_1_55_0/stage/lib -I eigen -I boost_1_55_0 -pthread -msse2 *.cpp -lboost_system -lboost_thread -lrt -w -O3 -o hwu
