@@ -11,7 +11,7 @@ YEAR: 2016
 LICENSE: Released under GNU General Public License, v2 (see
 COPYING.txt)
 
-DOCUMENTATION: http://changshuaiwei.github.io/software.html
+DOCUMENTATION: http://changshuaiwei.github.io/software.html#GSU
 
 
 COMPILATION: You will need a standard C++ compiler such as GNU g++
